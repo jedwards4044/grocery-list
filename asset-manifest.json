@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/jedwards4044/grocery-list/static/css/main.5bdc4d24.css",
-    "main.js": "/jedwards4044/grocery-list/static/js/main.fcc7526b.js",
-    "static/js/787.78e3f8c1.chunk.js": "/jedwards4044/grocery-list/static/js/787.78e3f8c1.chunk.js",
-    "index.html": "/jedwards4044/grocery-list/index.html",
-    "main.5bdc4d24.css.map": "/jedwards4044/grocery-list/static/css/main.5bdc4d24.css.map",
-    "main.fcc7526b.js.map": "/jedwards4044/grocery-list/static/js/main.fcc7526b.js.map",
-    "787.78e3f8c1.chunk.js.map": "/jedwards4044/grocery-list/static/js/787.78e3f8c1.chunk.js.map"
+    "main.css": "/grocery-list/static/css/main.5bdc4d24.css",
+    "main.js": "/grocery-list/static/js/main.f0cfa288.js",
+    "static/js/787.78e3f8c1.chunk.js": "/grocery-list/static/js/787.78e3f8c1.chunk.js",
+    "index.html": "/grocery-list/index.html",
+    "main.5bdc4d24.css.map": "/grocery-list/static/css/main.5bdc4d24.css.map",
+    "main.f0cfa288.js.map": "/grocery-list/static/js/main.f0cfa288.js.map",
+    "787.78e3f8c1.chunk.js.map": "/grocery-list/static/js/787.78e3f8c1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5bdc4d24.css",
-    "static/js/main.fcc7526b.js"
+    "static/js/main.f0cfa288.js"
   ]
 }
