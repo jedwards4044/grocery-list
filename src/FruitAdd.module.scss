@@ -1,0 +1,55 @@
+@import 'Global';
+@import 'Colors';
+
+.fruit {
+    @include useFlex;
+    align-items: center;
+    border: 3px solid #000;
+    border-radius: $bor-radius;
+    @include maxWidth($small-block);
+    justify-content: end;
+    padding-right: 2rem;
+    margin: 1rem auto;
+    //background: color(primary);
+    @include setBlue(background-color);
+    color: #fff;
+    /*     @include mobileChange {
+        padding: 0.3rem;
+        width: 100%;
+    } */
+    @include mQ(map-get($breakpoints, 'sm')) {
+        padding: 0.3rem;
+        width: 100%;
+    }
+    font-family: $main-font;
+
+    .fruit__checked {
+        background-color: color(checked-color);
+        color: #fff;
+        &:before {
+            content: '✓';
+            padding-right: 1rem;
+        }
+    }
+
+    .fruit__btn {
+        @extend %btn-default;
+        background-color: color(alt-color);
+
+        &:hover {
+            background: color(btn-hover);
+            @include transition;
+        }
+    }
+    h3 {
+        padding: 1rem;
+        margin: 1rem;
+        font-size: $reg-font-size;
+        //Color change function
+        color: light-comp(color(red-color));
+        @include mobileChange {
+            padding: 0.3rem;
+            font-size: 1rem;
+        }
+    }
+}

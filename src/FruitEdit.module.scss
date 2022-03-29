@@ -1,0 +1,27 @@
+@import 'Global';
+@import 'Colors';
+
+.FruitEdit {
+    margin: 0 auto;
+
+    .FruitEdit__btn {
+        @extend %btn-default;
+        background: color(btn-color-2);
+        &.FruitEdit--btn_dark {
+            background: color(btn-color-3);
+        }
+        &:hover {
+            background: color(btn-hover);
+            @include transition;
+        }
+    }
+
+    .FruitEdit__addingfruit {
+        display: flex;
+        margin-top: 2rem;
+    }
+    .FruitEdit__inp {
+        border-radius: 10px;
+        margin: 0.3rem;
+    }
+}

@@ -1,0 +1,55 @@
+@import 'Global';
+@import 'Colors';
+
+.fruits {
+    @include useFlex;
+    flex-direction: column;
+    @include maxWidth($main-width);
+    @include theme-color;
+    padding: 2rem;
+    border-radius: $bor-radius;
+    box-shadow: $shadow-2;
+    width: $main-width;
+    width: 100%;
+    @include mQ(map-get($breakpoints, 'sm')) {
+        padding: 0.3rem;
+    }
+
+    .fruits__headText {
+        //border-bottom: 8px solid color(primary);
+        @include maxWidth(18rem);
+        padding: 1rem;
+        margin-bottom: 2rem;
+        margin: {
+            bottom: 2rem;
+            top: 1rem;
+        }
+        font: {
+            weight: bold;
+            size: 2.5rem;
+            family: $main-font;
+        }
+    }
+    &:hover {
+        box-shadow: $shadow;
+        @include transition;
+    }
+    @include xs {
+        color: red;
+    }
+    @include sm {
+        color: blue;
+    }
+    @include md {
+        color: green;
+    }
+    @include lg {
+        color: yellow;
+    }
+    @include xl {
+        color: orange;
+    }
+    @include breakpoint(1440px) {
+        color: black;
+    }
+}

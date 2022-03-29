@@ -1,0 +1,164 @@
+@import 'Colors';
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Zen+Antique');
+
+/*------------------- Variables ---------------------------*/
+$bor-radius: 15px;
+$shadow: 5px 5px 15px 5px rgb(0, 0, 0, 0.5);
+$shadow-2: 3px 3px 9px 3px rgb(0, 0, 0, 0.3);
+$main-font: 'Architects Daughter', cursive;
+$mobile: 500px;
+$light-theme: true;
+$reg-font-size: 1.5rem;
+//Using calc in variables
+$huge-font-size: $reg-font-size * 2;
+//$huge-font-size: double($reg-font-size);
+$main-width: 40rem;
+
+//small bblock is 70% of main width
+$small-block: ($main-width * 0.7);
+
+//Screen size breakpoints
+$breakpoints: (
+    'xs': 0,
+    'sm': 480px,
+    'md': 720,
+    'lg': 960px,
+    'xl': 1200px,
+);
+
+@mixin xs {
+    @media (min-width: map-get($breakpoints, 'xs')) {
+        @content;
+    }
+}
+@mixin sm {
+    @media (min-width: map-get($breakpoints, 'sm')) {
+        @content;
+    }
+}
+@mixin md {
+    @media (min-width: map-get($breakpoints, 'md')) {
+        @content;
+    }
+}
+@mixin lg {
+    @media (min-width: map-get($breakpoints, 'lg')) {
+        @content;
+    }
+}
+@mixin xl {
+    @media (min-width: map-get($breakpoints, 'xl')) {
+        @content;
+    }
+}
+
+//custom breakpoint (default value of 0
+@mixin breakpoint($bp: 0) {
+    @media (min-width: $bp) {
+        @content;
+    }
+}
+
+/*----------------------- Extended classes -----------------------*/
+%btn-default {
+    padding: 1rem;
+    color: #fff;
+    border-radius: $bor-radius;
+    box-shadow: $shadow-2;
+    //cursor: pointer;
+    font: {
+        weight: bold;
+        size: 1rem;
+    }
+}
+/*---------------------------------------- Functions -----------------------------*/
+
+// functions that allows you to use map-get to get each color with color(varname)
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}
+
+//Darker complementary color
+@function light-comp($color) {
+    $complement: complement($color);
+    $light-complement: darken($complement, 5%);
+    @return $light-complement;
+}
+
+//Declaring font sizes for each tag
+$font-sizes: (
+    h1: 48px,
+    h2: 36px,
+    h3: 24px,
+    h4: 18px,
+    p: 12px,
+);
+//creates font size for each main html tag
+@each $tag, $size in $font-sizes {
+    #{$tag} {
+        font-size: $size;
+    }
+}
+
+@function theme-color() {
+    @if $light-theme {
+        @return color(primary-bckg);
+    } @else {
+        @return color(dark-bckg);
+    }
+}
+
+//Double size
+@function double($size) {
+    @return $size * 2;
+}
+
+/* -------------------- Mix Ins --------------------*/
+//Displays flex
+@mixin useFlex {
+    display: flex;
+    flex-wrap: wrap;
+}
+//Theme color mode if statement
+@mixin theme-color() {
+    @if $light-theme {
+        background: color(primary-bckg);
+    } @else {
+        background: color(dark-bckg);
+        color: #fff;
+    }
+}
+//Sets whatever property passed to blue
+@mixin setBlue($property) {
+    #{$property}: color(primary);
+}
+
+@mixin maxWidth($maxWidth) {
+    max-width: $maxWidth;
+    margin: 0 auto;
+}
+
+@mixin transition {
+    transition-duration: 1s !important;
+    transition-timing-function: ease-in !important;
+}
+
+@mixin mobileChange {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+//With if statements (max and min width)
+@mixin mQ($args...) {
+    @if length($args) == 1 {
+        @media screen and (max-width: nth($args, 1)) {
+            @content;
+        }
+    }
+    @if length($args) == 2 {
+        @media screen and (max-width: nth($args, 1)) and (min-width: nth($args, 2)) {
+            @content;
+        }
+    }
+}

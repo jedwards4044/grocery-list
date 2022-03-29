@@ -1,0 +1,23 @@
+/*
+input {
+    width: 10rem;
+    height: 3rem;
+}
+
+label {
+    font-size: 2rem;
+    padding: 1rem;
+}
+form div,
+.fruit {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
+    align-items: center;
+}
+
+.adding-fruit {
+    display: flex;
+    margin-top: 2rem;
+}
+*/
